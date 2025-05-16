@@ -1,7 +1,7 @@
 Allow text conversion from default font to MiniFont style in-game (Minecraft: Java Edition)
 
 With this plugin, you will be able to convert texts/messages to the MiniFont style.
-In this case, you can use it to easylly decorate GUI inventories' titles and lores,
+In this case, you can use it to easily decorate GUI inventories' titles and lores,
 holograms and many more text contents with a fast click & copy in-game chat.
 
 Commands:
