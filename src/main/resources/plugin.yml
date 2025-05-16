@@ -1,0 +1,28 @@
+name: MiniFontConverter
+version: '1.0.0'
+main: me.goldmember33.converter.MiniFontConverterPlugin
+api-version: '1.20'
+prefix: MiniFontConverter
+load: STARTUP
+authors: [ GoldMember33 ]
+description: Um plugin que converte mensagens para MiniFont estilizado e permite a conversão automática de mensagens do chat.
+
+commands:
+  minifontconverter:
+    description: Converte sua mensagem para MiniFont estilizado.
+  minifontchatoggle:
+    description: Ativa ou desativa a conversão automática de mensagens para MiniFont.
+  minifontreload:
+    description: Recarrega o plugin de MiniFont.
+    aliases: [ "mfreload" ]
+
+permissions:
+  minifontconverter.convert.use:
+    description: Permissão para usar o comando /minifontconverter
+    default: op
+  minifontconverter.convert.chat.use:
+    description: Permissão para usar os recursos do plugin para converter as suas mensagens do chat para MiniFont.
+    default: op
+  minifontconverter.reload:
+    description: Permissão para usar o comando /minifontreload
+    default: op
