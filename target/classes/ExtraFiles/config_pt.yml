@@ -9,7 +9,6 @@ messages:
   command-correct-usage: "<red>Uso correto: /minifont</red> <white><mensagem></white>"
   status-enabled: "<green>Ativado</green>"
   status-disabled: "<red>Desativado</red>"
-
   toggle-chat-feature-status: "<green>O status do recurso de chat foi alterado para:</green> <white>{status}</white>"
   click-to-copy-clipboard: "<blue>Clique para copiar a entrada para a área de transferência</blue>"
   copy-text: "<aqua> [Copiar]</aqua>"

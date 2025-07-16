@@ -1,0 +1,26 @@
+settings:
+  # Converted messages to MiniFont will be able to be copied automatically
+  # using the [copy] option in the component?
+  # This will make the messages copied without the need to click and paste
+  # the message to the clipboard, to then copy.
+  set-copy-converted-message-contents-option: true
+
+messages:
+  command-correct-usage: "<red>Correct usage: /minifont</red> <white><message></white>"
+  status-enabled: "<green>Enabled</green>"
+  status-disabled: "<red>Disabled</red>"
+  toggle-chat-feature-status: "<green>Chat feature status has been changed to:</green> <white>{status}</white>"
+  click-to-copy-clipboard: "<blue>Click to copy entry to the clipboard</blue>"
+  copy-text: "<aqua> [Copy]</aqua>"
+  click-to-suggest: "<blue>Click to suggest text content in the chat</blue>"
+  suggest-button: "<green> [Suggest text]</green>"
+  converted-message-output: "<green>Message converted to MiniFont: </green> "
+  converted-message-copied: "<green>Converted message copied successfully!</green>"
+  no-permission: "<red>You don't have permission to execute this command!</red>"
+  command-only-player: "<red>This command can only be used by players!</red>"
+  toggle-chat-feature-command-correct-usage: "<red>Correct usage: /minifontchat</red> <white><true/false></white>"
+  requires-valid-flag-for-chat-toggle-feature-usage: "<red>Correct usage: /minifontchat <toggle/true/false></red>"
+  player-data-file-created: "<blue>Data has been created for player with name:</blue> <white>{player}</white>"
+  player-data-file-creation-failed: "<red>There was an error creating the player data file with name:</red> <white>{player}</white>"
+  player-data-file-creation-error: "<red>Error description:</red> <dark_red>{error}</dark_red> <red>for player with name</red> <white>{player}</white>"
+  reloaded-configurations: "<green>All configuration files have been reloaded!</green>"

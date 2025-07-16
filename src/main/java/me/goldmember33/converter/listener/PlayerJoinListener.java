@@ -16,10 +16,10 @@ public class PlayerJoinListener implements Listener {
         if (!player.hasPlayedBefore()) {
             MiniFontConverterPlugin.getInstance().getChatFeatureEnabledMap().put(player.getUniqueId(), false);
         } else {
-            YamlConfiguration playerConfig = MiniFontConverterPlugin.getInstance().getPlayerData().getPlayerDataConfig(player);
+            YamlConfiguration playerConfig = MiniFontConverterPlugin.getInstance().getPlayerDataManager().getPlayerDataConfig(player);
             boolean value = playerConfig.getBoolean("chat-feature-enabled", false);
             MiniFontConverterPlugin.getInstance().getChatFeatureEnabledMap().putIfAbsent(player.getUniqueId(), value);
-            MiniFontConverterPlugin.getInstance().getPlayerData().setDataToPlayerConfig(player, value);
+            MiniFontConverterPlugin.getInstance().getPlayerDataManager().setDataToPlayerConfig(player, value);
         }
     }
 }

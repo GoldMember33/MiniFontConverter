@@ -1,5 +1,5 @@
 name: MiniFontConverter
-version: '1.0.0'
+version: '1.0.2'
 main: me.goldmember33.converter.MiniFontConverterPlugin
 api-version: '1.20'
 prefix: MiniFontConverter

@@ -1,15 +1,27 @@
+settings:
+  # Mensagens convertidas para MiniFont podem ser copiadas automaticamente
+  # utilizando a opção [copiar] na component?
+  # Isto vai fazer com que as mensagens sejam copiadas, sem a necessidade de
+  # clicar e colar a mensagem na área de transferência, para depois copiar.
+  set-copy-converted-message-contents-option: true
+
 messages:
   command-correct-usage: "<red>Uso correto: /minifont</red> <white><mensagem></white>"
   status-enabled: "<green>Ativado</green>"
   status-disabled: "<red>Desativado</red>"
+
   toggle-chat-feature-status: "<green>O status do recurso de chat foi alterado para:</green> <white>{status}</white>"
-  click-to-copy-clipboard: "<blue>Clique para copiar a entrada</blue>"
+  click-to-copy-clipboard: "<blue>Clique para copiar a entrada para a área de transferência</blue>"
+  copy-text: "<aqua> [Copiar]</aqua>"
+  click-to-suggest: "<blue>Clique para sugerir o conteúdo de texto no chat</blue>"
+  suggest-button: "<green> [Sugerir texto]</green>"
   converted-message-output: "<green>Mensagem convertida para MiniFont: </green> "
+  converted-message-copied: "<green>Mensagem convertida copiada com sucesso!</green>"
   no-permission: "<red>Você não tem permissão para executar este comando!</red>"
-  command-only-player: "<red>Este comando só pode ser usado por jogadores!</red>"
+  command-only-player: "<red>Este comando só pode ser utilizado por jogadores!</red>"
   toggle-chat-feature-command-correct-usage: "<red>Uso correto: /minifontchat</red> <white><true/false></white>"
   requires-valid-flag-for-chat-toggle-feature-usage: "<red>Uso correto: /minifontchat <toggle/true/false></red>"
-  player-data-file-created: "<blue>Player data file created for:</blue> <white>{player}</white>"
-  player-data-file-creation-failed: "<red>Failed to create player data file for:</red> <white>{player}</white>"
-  player-data-file-creation-error: "<red>Error creating player data file for:</red> <white>{player}</white>: <dark_red>{error}</dark_red>"
-  reloaded-configurations: "<green>Todas as configurações foram recarregadas!</green>"
+  player-data-file-created: "<blue>Os dados foram criados para o jogador com nome:</blue> <white>{player}</white>"
+  player-data-file-creation-failed: "<red>Houve um erro ao criar o arquivo de dados do jogador com nome:</red> <white>{player}</white>"
+  player-data-file-creation-error: "<red>Descrição do erro:</red> <dark_red>{error}</dark_red> <red>para o jogador com nome</red> <white>{player}</white>"
+  reloaded-configurations: "<green>Todas os arquivos de configurações foram recarregados!</green>"

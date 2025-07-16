@@ -1,0 +1,32 @@
+settings:
+  # Mensagens convertidas para MiniFont podem ser copiadas automaticamente
+  # utilizando a opção [copiar] na component?
+  # Isto vai fazer com que as mensagens sejam copiadas, sem a necessidade de
+  # clicar e colar a mensagem na área de transferência, para depois copiar.
+  set-copy-converted-message-contents-option: true
+
+messages:
+  command-correct-usage: "<red>ᴜsᴏ ᴄᴏʀʀᴇᴛᴏ: /minifont</red> <white><mensagem></white>"
+  status-enabled: "<green>ᴀᴛɪᴠᴀᴅᴏ</green>"
+  status-disabled: "<red>ᴅᴇsᴀᴛɪᴠᴀᴅᴏ</red>"
+  toggle-chat-feature-status: "<green>ᴏ sᴛᴀᴛᴜs ᴅᴏ ʀᴇᴄᴜʀsᴏ ᴅᴇ ᴄʜᴀᴛ ғᴏɪ ᴀʟᴛᴇʀᴀᴅᴏ ᴘᴀʀᴀ:</green>
+    <white>{status}</white>"
+  click-to-copy-clipboard: "<blue>ᴄʟɪϙᴜᴇ ᴘᴀʀᴀ ᴄᴏᴘɪᴀʀ ᴀ ᴇɴᴛʀᴀᴅᴀ  ᴘᴀʀᴀ ᴀ áʀᴇᴀ ᴅᴇ ᴛʀᴀɴsғᴇʀêɴᴄɪᴀ</blue>"
+  copy-text: "<aqua> [ᴄᴏᴘɪᴀʀ]</aqua>"
+  click-to-suggest: "<blue>ᴄʟɪǫᴜᴇ ᴘᴀʀᴀ sᴜɢᴇʀɪʀ ᴏ ᴄᴏɴᴛᴇúᴅᴏ ᴅᴇ ᴛᴇxᴛᴏ ɴᴏ ᴄʜᴀᴛ</blue>"
+  suggest-button: "<green> [sᴜɢᴇʀɪʀ ᴛᴇxᴛᴏ]</green>"
+  converted-message-output: "<green>ᴍᴇɴsᴀɢᴇᴍ ᴄᴏɴᴠᴇʀᴛɪᴅᴀ ᴘᴀʀᴀ ᴍɪɴɪғᴏɴᴛ: </green> "
+  converted-message-copied: "<green>ᴍᴇɴsᴀɢᴇᴍ ᴄᴏɴᴠᴇʀᴛɪᴅᴀ ᴄᴏᴘɪᴀᴅᴀ ᴄᴏᴍ sᴜᴄᴇssᴏ!</green>"
+  no-permission: "<red>ᴠᴏᴄᴇ ɴᴀ̃ᴏ ᴛᴇᴍ ᴘᴇʀᴍɪssᴀᴏ ᴘᴀʀᴀ ᴇxᴇᴄᴜᴛᴀʀ ᴇsᴛᴇ ᴄᴏᴍᴀɴᴅᴏ!</red>"
+  command-only-player: "<red>ᴇsᴛᴇ ᴄᴏᴍᴀɴᴅᴏ sᴏ́ ᴘᴏᴅᴇ sᴇʀ ᴜᴛɪʟɪᴢᴀᴅᴏ ᴘᴏʀ ᴊᴏɢᴀᴅᴏʀᴇs!</red>"
+  toggle-chat-feature-command-correct-usage: "<red>ᴜsᴏ ᴄᴏʀʀᴇᴛᴏ: /ᴍɪɴɪғᴏɴᴛᴄʜᴀᴛ</red>
+    <white><ᴛʀᴜᴇ/ғᴀʟsᴇ></white>"
+  requires-valid-flag-for-chat-toggle-feature-usage: "<red>ᴜsᴏ ᴄᴏʀʀᴇᴛᴏ: /ᴍɪɴɪғᴏɴᴛᴄʜᴀᴛ
+    <ᴛᴏɢɢʟᴇ/ᴛʀᴜᴇ/ғᴀʟsᴇ></red>"
+  player-data-file-created: "<blue>ᴏs ᴅᴀᴅᴏs ғᴏʀᴀᴍ ᴄʀɪᴀᴅᴏs ᴘᴀʀᴀ ᴏ ᴊᴏɢᴀᴅᴏʀ ᴄᴏᴍ ɴᴏᴍᴇ:</blue>
+    <white>{player}</white>"
+  player-data-file-creation-failed: "<red>ʜᴏᴜᴠᴇ ᴜᴍ ᴇʀʀᴏ ᴀᴏ ᴄʀɪᴀʀ ᴏ ᴀʀϙᴜɪᴠᴏ ᴅᴇ ᴅᴀᴅᴏs ᴅᴏ
+    ᴊᴏɢᴀᴅᴏʀ ᴄᴏᴍ ɴᴏᴍᴇ:</red> <white>{player}</white>"
+  player-data-file-creation-error: "<red>ᴅᴇsᴄʀɪᴄ̧ᴀ̃ᴏ ᴅᴏ ᴇʀʀᴏ:</red> <dark_red>{error}</dark_red>
+    <red>ᴘᴀʀᴀ ᴏ ᴊᴏɢᴀᴅᴏʀ ᴄᴏᴍ ɴᴏᴍᴇ</red> <white>{player}</white>"
+  reloaded-configurations: "<green>ᴛᴏᴅᴏs ᴏs ᴀʀϙᴜɪᴠᴏs ᴅᴇ ᴄᴏɴғɪɢᴜʀᴀᴄ̧ᴏ̃ᴇs ғᴏʀᴀᴍ ʀᴇᴄᴀʀʀᴇɢᴀᴅᴏs!</green>"

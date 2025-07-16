@@ -1,0 +1,32 @@
+settings:
+  # Converted messages to MiniFont will be able to be copied automatically
+  # using the [copy] option in the component?
+  # This will make the messages copied without the need to click and paste
+  # the message to the clipboard, to then copy.
+  set-copy-converted-message-contents-option: true
+
+messages:
+  command-correct-usage: "<red>ᴄᴏʀʀᴇᴄᴛ ᴜsᴀɢᴇ: /minifont</red> <white><message></white>"
+  status-enabled: "<green>ᴇɴᴀʙʟᴇᴅ</green>"
+  status-disabled: "<red>ᴅɪsᴀʙʟᴇᴅ</red>"
+  toggle-chat-feature-status: "<green>ᴄʜᴀᴛ ғᴇᴀᴛᴜʀᴇ sᴛᴀᴛᴜs ʜᴀs ʙᴇᴇɴ ᴄʜᴀɴɢᴇᴅ ᴛᴏ:</green>
+    <white>{status}</white>"
+  click-to-copy-clipboard: "<blue>ᴄʟɪᴄᴋ ᴛᴏ ᴄᴏᴘʏ ᴇɴᴛʀʏ ᴛᴏ ᴛʜᴇ ᴄʟɪᴘʙᴏᴀʀᴅ</blue>"
+  copy-text: "<aqua> [ᴄᴏᴘʏ]</aqua>"
+  click-to-suggest: "<blue>ᴄʟɪᴄᴋ ᴛᴏ sᴜɢɢᴇsᴛ ᴛᴇxᴛ ᴄᴏɴᴛᴇɴᴛ ɪɴ ᴛʜᴇ ᴄʜᴀᴛ</blue>"
+  suggest-button: "<green> [sᴜɢɢᴇsᴛ ᴛᴇxᴛ]</green>"
+  converted-message-output: "<green>ᴍᴇssᴀɢᴇ ᴄᴏɴᴠᴇʀᴛᴇᴅ ᴛᴏ ᴍɪɴɪғᴏɴᴛ: </green> "
+  converted-message-copied: "<green>ᴄᴏɴᴠᴇʀᴛᴇᴅ ᴍᴇssᴀɢᴇ ᴄᴏᴘɪᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ!</green>"
+  no-permission: "<red>ʏᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴘᴇʀᴍɪssɪᴏɴ ᴛᴏ ᴇxᴇᴄᴜᴛᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ!</red>"
+  command-only-player: "<red>ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ᴏɴʟʏ ʙᴇ ᴜsᴇᴅ ʙʏ ᴘʟᴀʏᴇʀs!</red>"
+  toggle-chat-feature-command-correct-usage: "<red>ᴄᴏʀʀᴇᴄᴛ ᴜsᴀɢᴇ: /ᴍɪɴɪғᴏɴᴛᴄʜᴀᴛ</red>
+    <white><ᴛʀᴜᴇ/ғᴀʟsᴇ></white>"
+  requires-valid-flag-for-chat-toggle-feature-usage: "<red>ᴄᴏʀʀᴇᴄᴛ ᴜsᴀɢᴇ: /ᴍɪɴɪғᴏɴᴛᴄʜᴀᴛ
+    <ᴛᴏɢɢʟᴇ/ᴛʀᴜᴇ/ғᴀʟsᴇ></red>"
+  player-data-file-created: "<blue>ᴅᴀᴛᴀ ʜᴀs ʙᴇᴇɴ ᴄʀᴇᴀᴛᴇᴅ ғᴏʀ ᴘʟᴀʏᴇʀ ᴡɪᴛʜ ɴᴀᴍᴇ:</blue>
+    <white>{player}</white>"
+  player-data-file-creation-failed: "<red>ᴛʜᴇʀᴇ ᴡᴀs ᴀɴ ᴇʀʀᴏʀ ᴄʀᴇᴀᴛɪɴɢ ᴛʜᴇ ᴘʟᴀʏᴇʀ ᴅᴀᴛᴀ
+    ғɪʟᴇ ᴡɪᴛʜ ɴᴀᴍᴇ:</red> <white>{player}</white>"
+  player-data-file-creation-error: "<red>ᴇʀʀᴏʀ ᴅᴇsᴄʀɪᴘᴛɪᴏɴ:</red> <dark_red>{error}</dark_red>
+    <red>ғᴏʀ ᴘʟᴀʏᴇʀ ᴡɪᴛʜ ɴᴀᴍᴇ</red> <white>{player}</white>"
+  reloaded-configurations: "<green>ᴀʟʟ ᴄᴏɴғɪɢᴜʀᴀᴛɪᴏɴ ғɪʟᴇs ʜᴀᴠᴇ ʙᴇᴇɴ ʀᴇʟᴏᴀᴅᴇᴅ!</green>"

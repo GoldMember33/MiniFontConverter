@@ -48,7 +48,7 @@ public class MiniFontChatToggleCommand implements CommandExecutor, TabCompleter 
                 return false;
             }
 
-            YamlConfiguration playerDataConfig = plugin.getPlayerData().getPlayerDataConfig(player);
+            YamlConfiguration playerDataConfig = plugin.getPlayerDataManager().getPlayerDataConfig(player);
             boolean flag = playerDataConfig.getBoolean("data." + player.getUniqueId() + ".chat-feature-enabled");
             if (flagArg.equalsIgnoreCase("toggle")) {
                 flag = !flag;
@@ -61,7 +61,7 @@ public class MiniFontChatToggleCommand implements CommandExecutor, TabCompleter 
             }
 
             plugin.getChatFeatureEnabledMap().put(player.getUniqueId(), flag);
-            plugin.getPlayerData().setDataToPlayerConfig(player, flag);
+            plugin.getPlayerDataManager().setDataToPlayerConfig(player, flag);
             player.sendMessage(MiniFontConverterPlugin.deserialize(MiniFontConverterPlugin.TOGGLE_CHAT_FEATURE_STATUS
                     .replace("{status}",
                             String.valueOf(flag

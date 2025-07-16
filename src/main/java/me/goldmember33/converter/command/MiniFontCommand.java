@@ -1,9 +1,9 @@
 package me.goldmember33.converter.command;
 
 import me.goldmember33.converter.MiniFontConverterPlugin;
+import me.goldmember33.converter.listener.ChatListener;
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.TextComponent;
-import net.kyori.adventure.text.event.ClickEvent;
+import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -32,16 +32,10 @@ public class MiniFontCommand implements CommandExecutor, TabCompleter {
         }
 
         String message = String.join(" ", args);
-        String convertedMessage = MiniFontConverterPlugin.convertToMiniFont(message);
+        String convertedMessage = MiniFontConverterPlugin.convertToMiniFont(
+                PlainTextComponentSerializer.plainText().serialize(Component.text(message)));
 
-        Component convertedToMiniFontComponent = MiniFontConverterPlugin
-                .deserialize(convertedMessage)
-                .hoverEvent(MiniFontConverterPlugin.deserialize(MiniFontConverterPlugin.CLICK_TO_COPY_CLIPBOARD))
-                .clickEvent(ClickEvent.copyToClipboard(convertedMessage))
-                .clickEvent(ClickEvent.suggestCommand(convertedMessage));
-
-        TextComponent messageConvertedTextComponent = (TextComponent) MiniFontConverterPlugin.deserialize(MiniFontConverterPlugin.CONVERTED_MESSAGE_OUTPUT);
-        convertedToMiniFontComponent = messageConvertedTextComponent.append(convertedToMiniFontComponent);
+        Component convertedToMiniFontComponent = ChatListener.buildConvertedMessageComponent(plugin, convertedMessage);
 
         if (sender instanceof ConsoleCommandSender cs) {
             cs.sendMessage(convertedToMiniFontComponent);
@@ -49,6 +43,10 @@ public class MiniFontCommand implements CommandExecutor, TabCompleter {
 
         if (sender instanceof Player player) {
             player.sendMessage(convertedToMiniFontComponent);
+
+            if (plugin.getConfig().getBoolean("settings.set-copy-converted-message-contents-option", true)) {
+                player.sendMessage(MiniFontConverterPlugin.deserialize(MiniFontConverterPlugin.CONVERTED_MESSAGE_COPIED));
+            }
         }
 
         return true;

@@ -1,4 +1,4 @@
-package me.goldmember33.converter.data;
+package me.goldmember33.converter.manager;
 
 import me.goldmember33.converter.MiniFontConverterPlugin;
 import org.bukkit.Bukkit;
@@ -10,11 +10,11 @@ import java.io.File;
 import java.util.Objects;
 import java.util.UUID;
 
-public class PlayerData {
+public class PlayerDataManager {
 
-    private File playerDataFolder;
+    private final File playerDataFolder;
 
-    public PlayerData() {
+    public PlayerDataManager() {
         this.playerDataFolder = new File(MiniFontConverterPlugin.getInstance().getDataFolder()
         + File.separator + "data");
 
@@ -47,7 +47,6 @@ public class PlayerData {
                         .replace("{error}", e.getMessage()));
             }
         }
-
     }
 
     public File getPlayerDataFile(@NotNull Player player) {
@@ -83,9 +82,5 @@ public class PlayerData {
         for (File file : Objects.requireNonNull(playerDataFolder.listFiles())) {
             YamlConfiguration.loadConfiguration(file);
         }
-    }
-
-    public File getPlayerDataFolder() {
-        return playerDataFolder;
     }
 }
