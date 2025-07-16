@@ -1,3 +1,6 @@
+
+![Alt text](images/logo.png)
+
 Allow text conversion from default font to MiniFont style in-game (Minecraft: Java Edition)
 
 With this plugin, you will be able to convert texts/messages to the MiniFont style.
