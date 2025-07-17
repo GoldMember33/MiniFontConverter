@@ -1,7 +1,9 @@
-package me.goldmember33.converter.listener;
+package com.github.goldmember33.converter.listener;
 
 import io.papermc.paper.event.player.AsyncChatEvent;
-import me.goldmember33.converter.MiniFontConverterPlugin;
+import com.github.goldmember33.converter.MiniFontConverterPlugin;
+import com.github.goldmember33.converter.configuration.MessageValues;
+import com.github.goldmember33.converter.utilities.ColorUtils;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.event.ClickEvent;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
@@ -29,24 +31,17 @@ public class ChatListener implements Listener {
 
             Component convertedToMiniFontComponent = buildConvertedMessageComponent(plugin, convertedMessage);
 
-            //TextComponent messageConvertedTextComponent = (TextComponent) MiniFontConverterPlugin.deserialize(MiniFontConverterPlugin.CONVERTED_MESSAGE_OUTPUT);
-            //convertedToMiniFontComponent = messageConvertedTextComponent.append(convertedToMiniFontComponent);
-
             player.sendMessage(convertedToMiniFontComponent);
-
-            if (plugin.getConfig().getBoolean("settings.set-copy-converted-message-contents-option", true)) {
-                player.sendMessage(MiniFontConverterPlugin.deserialize(MiniFontConverterPlugin.CONVERTED_MESSAGE_COPIED));
-            }
         }
     }
 
     public static Component buildConvertedMessageComponent(Plugin plugin, String message) {
-        Component baseComponent = MiniFontConverterPlugin.deserialize(MiniFontConverterPlugin.CONVERTED_MESSAGE_OUTPUT);
+        Component baseComponent = ColorUtils.deserialize(MessageValues.CONVERTED_MESSAGE_OUTPUT);
 
         Component convertedText = Component.text(message);
 
-        Component suggestComponent = MiniFontConverterPlugin.deserialize(MiniFontConverterPlugin.SUGGEST_TEXT)
-                .hoverEvent(MiniFontConverterPlugin.deserialize(MiniFontConverterPlugin.CLICK_TO_SUGGEST))
+        Component suggestComponent = ColorUtils.deserialize(MessageValues.SUGGEST_TEXT)
+                .hoverEvent(ColorUtils.deserialize(MessageValues.CLICK_TO_SUGGEST))
                 .clickEvent(ClickEvent.suggestCommand(message));
 
         baseComponent = baseComponent
@@ -54,8 +49,8 @@ public class ChatListener implements Listener {
                 .append(suggestComponent);
 
         if (plugin.getConfig().getBoolean("settings.set-copy-converted-message-contents-option", true)) {
-            Component copyComponent = MiniFontConverterPlugin.deserialize(MiniFontConverterPlugin.COPY_TEXT)
-                    .hoverEvent(MiniFontConverterPlugin.deserialize(MiniFontConverterPlugin.CLICK_TO_COPY_CLIPBOARD))
+            Component copyComponent = ColorUtils.deserialize(MessageValues.COPY_TEXT)
+                    .hoverEvent(ColorUtils.deserialize(MessageValues.CLICK_TO_COPY_CLIPBOARD))
                     .clickEvent(ClickEvent.copyToClipboard(message));
 
             baseComponent = baseComponent.append(copyComponent);

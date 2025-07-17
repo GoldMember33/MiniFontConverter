@@ -1,7 +1,9 @@
-package me.goldmember33.converter.command;
+package com.github.goldmember33.converter.command;
 
-import me.goldmember33.converter.MiniFontConverterPlugin;
-import me.goldmember33.converter.listener.ChatListener;
+import com.github.goldmember33.converter.MiniFontConverterPlugin;
+import com.github.goldmember33.converter.configuration.MessageValues;
+import com.github.goldmember33.converter.listener.ChatListener;
+import com.github.goldmember33.converter.utilities.ColorUtils;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.command.*;
@@ -22,12 +24,12 @@ public class MiniFontCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, @NotNull String[] args) {
         if (!sender.hasPermission("minifontconverter.convert.use")) {
-            sender.sendMessage(MiniFontConverterPlugin.deserialize(MiniFontConverterPlugin.NO_PERMISSION));
+            sender.sendMessage(ColorUtils.deserialize(MessageValues.NO_PERMISSION));
             return false;
         }
 
         if (args.length == 0) {
-            sender.sendMessage(MiniFontConverterPlugin.deserialize(MiniFontConverterPlugin.COMMAND_CORRECT_USAGE));
+            sender.sendMessage(ColorUtils.deserialize(MessageValues.COMMAND_CORRECT_USAGE));
             return false;
         }
 
@@ -43,10 +45,6 @@ public class MiniFontCommand implements CommandExecutor, TabCompleter {
 
         if (sender instanceof Player player) {
             player.sendMessage(convertedToMiniFontComponent);
-
-            if (plugin.getConfig().getBoolean("settings.set-copy-converted-message-contents-option", true)) {
-                player.sendMessage(MiniFontConverterPlugin.deserialize(MiniFontConverterPlugin.CONVERTED_MESSAGE_COPIED));
-            }
         }
 
         return true;
@@ -55,6 +53,11 @@ public class MiniFontCommand implements CommandExecutor, TabCompleter {
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label,
                                                 @NotNull String[] args) {
+
+        if (!sender.hasPermission("minifontconverter.convert.use")) {
+            return List.of();
+        }
+
         if (args.length == 1) {
             return List.of("<message>", "<mensagem>", "<entrada>", "<input>", "example", "exemplo");
         }

@@ -1,12 +1,15 @@
-package me.goldmember33.converter.manager;
+package com.github.goldmember33.converter.manager;
 
-import me.goldmember33.converter.MiniFontConverterPlugin;
+import com.github.goldmember33.converter.MiniFontConverterPlugin;
+import com.github.goldmember33.converter.configuration.MessageValues;
+import com.github.goldmember33.converter.utilities.LoggingUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -35,14 +38,14 @@ public class PlayerDataManager {
         if (!playerDataFile.exists()) {
             try {
                 if (playerDataFile.createNewFile()) {
-                    MiniFontConverterPlugin.getInstance().getLogger().info(MiniFontConverterPlugin.PLAYER_DATA_FILE_CREATED
+                    MiniFontConverterPlugin.getInstance().getLogger().info(MessageValues.PLAYER_DATA_FILE_CREATED
                             .replace("{player}", player.getName()));
                 } else {
-                    MiniFontConverterPlugin.getInstance().getLogger().warning(MiniFontConverterPlugin.PLAYER_DATA_FILE_CREATION_FAILED
+                    MiniFontConverterPlugin.getInstance().getLogger().warning(MessageValues.PLAYER_DATA_FILE_CREATION_FAILED
                             .replace("{player}", player.getName()));
                 }
             } catch (Exception e) {
-                MiniFontConverterPlugin.getInstance().getLogger().severe(MiniFontConverterPlugin.PLAYER_DATA_FILE_CREATION_ERROR
+                MiniFontConverterPlugin.getInstance().getLogger().severe(MessageValues.PLAYER_DATA_FILE_CREATION_ERROR
                         .replace("{player}", player.getName())
                         .replace("{error}", e.getMessage()));
             }
@@ -63,8 +66,13 @@ public class PlayerDataManager {
             playerDataConfig.createSection("data");
             try {
                 playerDataConfig.save(this.getPlayerDataFile(player));
-            } catch (Exception e) {
-                e.printStackTrace();
+
+            } catch (IOException ioException) {
+                LoggingUtils.logError("Erro ao salvar o arquivo de dados do jogador com nome: " +
+                        player.getName(), ioException);
+            } catch (Exception exception) {
+                LoggingUtils.logError("Erro desconhecido ao salvar o arquivo de dados do jogador com nome: " +
+                        player.getName(), exception);
             }
         }
 
@@ -73,8 +81,13 @@ public class PlayerDataManager {
 
         try {
             playerDataConfig.save(this.getPlayerDataFile(player));
-        } catch (Exception e) {
-            e.printStackTrace();
+
+        } catch (IOException ioException) {
+            LoggingUtils.logError("Erro ao salvar o arquivo de dados do jogador com nome: " +
+                    player.getName(), ioException);
+        } catch (Exception exception) {
+            LoggingUtils.logError("Erro desconhecido ao salvar o arquivo de dados do jogador com nome: " +
+                    player.getName(), exception);
         }
     }
 

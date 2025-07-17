@@ -1,6 +1,6 @@
-package me.goldmember33.converter.listener;
+package com.github.goldmember33.converter.listener;
 
-import me.goldmember33.converter.MiniFontConverterPlugin;
+import com.github.goldmember33.converter.MiniFontConverterPlugin;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

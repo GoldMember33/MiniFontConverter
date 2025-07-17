@@ -1,6 +1,8 @@
-package me.goldmember33.converter.command;
+package com.github.goldmember33.converter.command;
 
-import me.goldmember33.converter.MiniFontConverterPlugin;
+import com.github.goldmember33.converter.MiniFontConverterPlugin;
+import com.github.goldmember33.converter.configuration.MessageValues;
+import com.github.goldmember33.converter.utilities.ColorUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -26,25 +28,25 @@ public class MiniFontChatToggleCommand implements CommandExecutor, TabCompleter 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, @NotNull String[] args) {
         if (!sender.hasPermission("minifontconverter.convert.chat.use")) {
-            sender.sendMessage(MiniFontConverterPlugin.deserialize(MiniFontConverterPlugin.NO_PERMISSION));
+            sender.sendMessage(ColorUtils.deserialize(MessageValues.NO_PERMISSION));
             return false;
         }
 
         if (!(sender instanceof Player player)) {
-            sender.sendMessage(MiniFontConverterPlugin.deserialize(MiniFontConverterPlugin.COMMAND_ONLY_PLAYER));
+            sender.sendMessage(ColorUtils.deserialize(MessageValues.COMMAND_ONLY_PLAYER));
             return false;
         }
 
         if (args.length == 0) {
-            player.sendMessage(MiniFontConverterPlugin
-                    .deserialize(MiniFontConverterPlugin.TOGGLE_CHAT_FEATURE_COMMAND_CORRECT_USAGE));
+            player.sendMessage(ColorUtils
+                    .deserialize(MessageValues.TOGGLE_CHAT_FEATURE_COMMAND_CORRECT_USAGE));
             return false;
         }
 
         if (args.length == 1) {
             String flagArg = args[0].toLowerCase();
             if (!flagArg.equalsIgnoreCase("toggle") && !MiniFontConverterPlugin.isBoolean(flagArg)) {
-                player.sendMessage(MiniFontConverterPlugin.deserialize(MiniFontConverterPlugin.REQUIRES_VALID_FLAG_FOR_CHAT_TOGGLE_FEATURE_USAGE));
+                player.sendMessage(ColorUtils.deserialize(MessageValues.REQUIRES_VALID_FLAG_FOR_CHAT_TOGGLE_FEATURE_USAGE));
                 return false;
             }
 
@@ -62,11 +64,11 @@ public class MiniFontChatToggleCommand implements CommandExecutor, TabCompleter 
 
             plugin.getChatFeatureEnabledMap().put(player.getUniqueId(), flag);
             plugin.getPlayerDataManager().setDataToPlayerConfig(player, flag);
-            player.sendMessage(MiniFontConverterPlugin.deserialize(MiniFontConverterPlugin.TOGGLE_CHAT_FEATURE_STATUS
+            player.sendMessage(ColorUtils.deserialize(MessageValues.TOGGLE_CHAT_FEATURE_STATUS
                     .replace("{status}",
                             String.valueOf(flag
-                                    ? MiniFontConverterPlugin.STATUS_ENABLED
-                                    : MiniFontConverterPlugin.STATUS_DISABLED))));
+                                    ? MessageValues.STATUS_ENABLED
+                                    : MessageValues.STATUS_DISABLED))));
 
             return true;
         }
@@ -77,6 +79,11 @@ public class MiniFontChatToggleCommand implements CommandExecutor, TabCompleter 
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label,
                                                 @NotNull String[] args) {
+
+        if (!sender.hasPermission("minifontconverter.convert.chat.use")) {
+            return List.of();
+        }
+
         if (args.length == 1) {
             return StringUtil.copyPartialMatches(args[0], Arrays.asList("true", "false", "toggle"), new ArrayList<>());
         }
