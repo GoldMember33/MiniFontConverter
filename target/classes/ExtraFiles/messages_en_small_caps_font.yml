@@ -1,0 +1,34 @@
+# All the messages should follow the Kyori Adventure MiniMessage format.
+# Placeholders available to use in messages (configurable in message settings below):
+#
+# {prefix} - The plugin prefix.
+# {separator} - The message separator.
+#
+messages:
+  prefix: "<color:#58d6b0><b>ᴍɪɴɪғᴏɴᴛᴄᴏɴᴠᴇʀᴛᴇʀ</b></color>"
+  message-separator: "<color:#de008d><b> ➣ </b></color>"
+
+  command-correct-usage: "{prefix}{separator}<red>ᴄᴏʀʀᴇᴄᴛ ᴜsᴀɢᴇ: /minifont</red> <white><message></white>"
+  status-enabled: "<green>ᴇɴᴀʙʟᴇᴅ</green>"
+  status-disabled: "<red>ᴅɪsᴀʙʟᴇᴅ</red>"
+
+  toggle-chat-feature-status: "{prefix}{separator}<green>ᴄʜᴀᴛ ғᴇᴀᴛᴜʀᴇ sᴛᴀᴛᴜs ʜᴀs ʙᴇᴇɴ ᴄʜᴀɴɢᴇᴅ ᴛᴏ:</green>
+    <white>{status}</white>"
+  click-to-copy-clipboard: "{prefix}{separator}<blue>ᴄʟɪᴄᴋ ᴛᴏ ᴄᴏᴘʏ ᴇɴᴛʀʏ ᴛᴏ ᴛʜᴇ ᴄʟɪᴘʙᴏᴀʀᴅ</blue>"
+  copy-text: "<aqua> [ᴄᴏᴘʏ]</aqua>"
+  click-to-suggest: "<blue>ᴄʟɪᴄᴋ ᴛᴏ sᴜɢɢᴇsᴛ ᴛᴇxᴛ ᴄᴏɴᴛᴇɴᴛ ɪɴ ᴛʜᴇ ᴄʜᴀᴛ</blue>"
+  suggest-text: "<green> [sᴜɢɢᴇsᴛ ᴛᴇxᴛ]</green>"
+  converted-message-output: "{prefix}{separator}<green>ᴍᴇssᴀɢᴇ ᴄᴏɴᴠᴇʀᴛᴇᴅ ᴛᴏ ᴍɪɴɪғᴏɴᴛ: </green> "
+  no-permission: "{prefix}{separator}<red>ʏᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴘᴇʀᴍɪssɪᴏɴ ᴛᴏ ᴇxᴇᴄᴜᴛᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ!</red>"
+  command-only-player: "{prefix}{separator}<red>ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ᴏɴʟʏ ʙᴇ ᴜsᴇᴅ ʙʏ ᴘʟᴀʏᴇʀs!</red>"
+  toggle-chat-feature-command-correct-usage: "{prefix}{separator}<red>ᴄᴏʀʀᴇᴄᴛ ᴜsᴀɢᴇ: /ᴍɪɴɪғᴏɴᴛᴄʜᴀᴛ</red>
+    <white><ᴛʀᴜᴇ/ғᴀʟsᴇ></white>"
+  requires-valid-flag-for-chat-toggle-feature-usage: "{prefix}{separator}<red>ᴄᴏʀʀᴇᴄᴛ ᴜsᴀɢᴇ: /ᴍɪɴɪғᴏɴᴛᴄʜᴀᴛ
+    <ᴛᴏɢɢʟᴇ/ᴛʀᴜᴇ/ғᴀʟsᴇ></red>"
+  player-data-file-created: "<blue>ᴅᴀᴛᴀ ʜᴀs ʙᴇᴇɴ ᴄʀᴇᴀᴛᴇᴅ ғᴏʀ ᴘʟᴀʏᴇʀ ᴡɪᴛʜ ɴᴀᴍᴇ:</blue>
+    <white>{player}</white>"
+  player-data-file-creation-failed: "<red>ᴛʜᴇʀᴇ ᴡᴀs ᴀɴ ᴇʀʀᴏʀ ᴄʀᴇᴀᴛɪɴɢ ᴛʜᴇ ᴘʟᴀʏᴇʀ ᴅᴀᴛᴀ
+    ғɪʟᴇ ᴡɪᴛʜ ɴᴀᴍᴇ:</red> <white>{player}</white>"
+  player-data-file-creation-error: "<red>ᴇʀʀᴏʀ ᴅᴇsᴄʀɪᴘᴛɪᴏɴ:</red> <dark_red>{error}</dark_red>
+    <red>ғᴏʀ ᴘʟᴀʏᴇʀ ᴡɪᴛʜ ɴᴀᴍᴇ</red> <white>{player}</white>"
+  reloaded-configurations: "{prefix}{separator}<green>ᴀʟʟ ᴄᴏɴғɪɢᴜʀᴀᴛɪᴏɴ ғɪʟᴇs ʜᴀᴠᴇ ʙᴇᴇɴ ʀᴇʟᴏᴀᴅᴇᴅ!</green>"
