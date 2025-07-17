@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -95,5 +96,17 @@ public class PlayerDataManager {
         for (File file : Objects.requireNonNull(playerDataFolder.listFiles())) {
             YamlConfiguration.loadConfiguration(file);
         }
+    }
+
+    public HashMap<UUID, Boolean> loadChatFeatureEnabledMap() {
+        HashMap<UUID, Boolean> map = new HashMap<>();
+        for (File file : Objects.requireNonNull(playerDataFolder.listFiles())) {
+            YamlConfiguration playerDataConfig = YamlConfiguration.loadConfiguration(file);
+            UUID playerUUID = UUID.fromString(file.getName().replace(".yml", ""));
+            boolean chatFeatureEnabled = playerDataConfig.getBoolean("data." + playerUUID + ".chat-feature-enabled", false);
+            map.put(playerUUID, chatFeatureEnabled);
+        }
+
+        return map;
     }
 }

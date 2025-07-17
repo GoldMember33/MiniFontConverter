@@ -28,3 +28,12 @@ Changelog - Version 1.0.3:
  
   * Fixed:
     - /minifontreload command now correctly reloads messages settings.
+
+Changelog - Version 1.0.4:
+
+  * Added:
+    - Set more logging messages on plugin startup.
+
+  * Fixed:
+    - Now, the plugin correctly creates the player data file on first join.
+    - Fixed an issue where the plugin is not correctly saving the chat feature status flag.

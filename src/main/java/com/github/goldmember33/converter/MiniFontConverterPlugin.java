@@ -49,8 +49,11 @@ public final class MiniFontConverterPlugin extends JavaPlugin {
         this.setupConfigurations();
 
         // Loading data
-        this.chatFeatureEnabledMap = new HashMap<>();
         this.playerDataManager = new PlayerDataManager();
+        this.chatFeatureEnabledMap = this.playerDataManager.loadChatFeatureEnabledMap();
+
+        this.getLogger().info("Dados de MiniFontConverter carregados com sucesso.");
+        this.getLogger().info("Há " + this.chatFeatureEnabledMap.size() + " jogadores com o recurso de chat habilitado.");
 
         // Loading listeners
         this.getLogger().info("Carregando os listeners de eventos de MiniFontConverter...");

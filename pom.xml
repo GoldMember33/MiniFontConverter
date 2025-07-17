@@ -6,7 +6,7 @@
 
     <groupId>me.goldmember33</groupId>
     <artifactId>MiniFontConverter</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <packaging>jar</packaging>
 
     <name>MiniFontConverter</name>
